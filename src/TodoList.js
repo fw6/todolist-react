@@ -1,6 +1,5 @@
 import React from 'react'
 import TodoItem from './TodoItem'
-import './style.styl'
 import axios from 'axios'
 
 class TodoList extends React.Component {
