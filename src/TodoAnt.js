@@ -3,8 +3,8 @@ import 'antd/dist/antd.css'
 import store from './store/'
 // import * as types from './store/actionTypes'
 import TodoAntUI from './TodoAntUI'
-import axios from 'axios'
 import * as actions from './store/actionCreators'
+// import axios from 'axios'
 
 class TodoAnt extends React.Component {
   constructor(props) {
@@ -40,16 +40,19 @@ class TodoAnt extends React.Component {
   // }
 
   componentDidMount() {
-    axios
-      .get('api/todolist')
-      .then(res => {
-        const data = res.data
-        const action = actions.initListAction(data)
-        store.dispatch(action)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    // axios
+    //   .get('api/todolist')
+    //   .then(res => {
+    //     const data = res.data
+    //     const action = actions.initListAction(data)
+    //     store.dispatch(action)
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
+
+    store.dispatch(actions.getInitList())
+    // store.dispatch(actions.getTodoList())
   }
 
   render() {
